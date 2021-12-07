@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pqr', [PQRController::class, 'show']);
+Route::get('/pqrs', [PQRController::class, 'show']);

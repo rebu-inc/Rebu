@@ -25,6 +25,7 @@ class PQRController extends Controller
        $pqr->response = $request->response;
        $pqr->id_user = $request->id_user;
        $pqr->id_trip = $request->id_trip;
+       $pqr->state = $request->state;
 
        $pqr->save();
 
@@ -33,7 +34,7 @@ class PQRController extends Controller
 
    public function destroy($pqrId)
  {
-     $pqr = Post::find($pqrId);
+     $pqr = PQR::find($pqrId);
      $pqr->delete();
 
      return response()->json(["result" => "ok"], 200);       
@@ -46,6 +47,7 @@ class PQRController extends Controller
        $pqr->response = $request->response;
        $pqr->id_user = $request->id_user;
        $pqr->id_trip = $request->id_trip;
+       $pqr->state = $request->state;
        $pqr->save();
 
        return response()->json(["result" => "ok"], 201);       

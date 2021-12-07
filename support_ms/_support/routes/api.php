@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('posts', PQRController::class)->only([
+Route::resource('pqrs', PQRController::class)->only([
     'destroy', 'show', 'store', 'update'
  ]);
