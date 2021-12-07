@@ -1,9 +1,9 @@
-//javascript.js
+﻿//javascript.js
 //set map options
 var myLatLng = { lat: 4.7110, lng: -74.0721 };
 var mapOptions = {
     center: myLatLng,
-    zoom: 7,
+    zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 
 };
@@ -28,7 +28,7 @@ function calcRoute() {
         origin: document.getElementById("from").value,
         destination: document.getElementById("to").value,
         travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
-        unitSystem: google.maps.UnitSystem.METRIC
+        unitSystem: google.maps.UnitSystem.IMPERIAL
     }
 
     //pass the request to the route method
@@ -53,16 +53,3 @@ function calcRoute() {
     });
 
 }
-
-
-
-//create autocomplete objects for all inputs
-var options = {
-    types: ['(cities)']
-}
-
-var input1 = document.getElementById("from");
-var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
-
-var input2 = document.getElementById("to");
-var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
